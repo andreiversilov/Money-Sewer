@@ -22,13 +22,14 @@
 body {
 	font: 100% / 1.5 "Open Sans", Helvetica, Arial, sans-serif;
 	background: url(files/background_1.png);
-	 background-repeat: no-repeat;
-	   background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	margin:0px;
 	padding:0px;
 }
 #side_bar{
 	float:left;
+	display: flex;
 	margin: 0px;
 	position: relative;
 	height: 900px;
@@ -39,24 +40,22 @@ body {
 	margin:0px;
 	padding:0px;
 	margin-block-start: 0em;
-	padding-top: 200px;
-	padding-left: 150px;
+	padding-top: 12em;
+	padding-left: 10em;
 	color: white;
 	float:left;
 }
-.main{
+#center{
 	float:right;
 	width: 77%;
-	margin-top: 13em;
-
 }
 .main_li {
-	width: 30em;
-	font-size:large;
-	  margin: 2em 2em 2em 2em;
-	   padding: 1em;
-	
-	    position: relative;
+	top:10em;
+  width: 30em; 
+  font-size:large;
+  margin: 2em 2em 2em 2em;
+  padding: 1em;
+  position: relative;
   width: 25em;
   height: 1.5em;
 
@@ -72,6 +71,22 @@ body {
   	background: #a11f1fc2;
 }
 
+#new_one {
+	 box-shadow: 10px 10px rgba(0,0,0,.15);
+	width: 8em;
+	margin-top: 5em;
+	position: absolute;
+	top:4em;
+	padding: 0.8em;
+	background-color:#A48983;
+	text-decoration: none;
+}
+#new_one:hover{
+
+	border-radius: 50% 50% 50% 50% / 5% 5% 5% 5% ;
+  	box-shadow: -5px -5px rgba(0,0,0,.25);
+  	background: #a11f1fc2;
+}
 
 
 

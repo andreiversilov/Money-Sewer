@@ -13,11 +13,5 @@
 			<li class="list" style="padding-top: 70px;"><a href="#">Taxes</a></li>
 		</ul>
 	</div>
-	<div class="main" >
-		<ul type="none">
-			<li class="main_li">Current month expence: 128767.9 $</li>
-			<li class="main_li">Current month income: 123551.9 $</li>
-		</ul>
-	</div>
 </body>
 </html>
