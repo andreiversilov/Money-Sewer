@@ -2,9 +2,6 @@
 session_start();
  require_once "configs.php";
  require_once "functions.php";
-
-
-
 $action = ($_GET['action']);
 
 require_once TEMPLATE."main.tpl.php";
@@ -17,5 +14,4 @@ else
 {
   include ACTIONS."main.php"; 
 }
-
 ?>

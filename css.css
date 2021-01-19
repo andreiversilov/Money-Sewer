@@ -4,6 +4,54 @@
 	background: url(files/header.png);
 	
 }
+.logo{ 
+	position: absolute;
+	font-size: 30px;
+	color:white;
+	text-decoration: none;
+}
+
+#logo_top{
+	left:60px;
+	top:30px;
+	width: 249px;
+	height: 80px;
+}
+#sub
+{
+	display: block;
+	margin-top: 59px;
+	margin-left: 10px;
+	background:#a11f1fc2;	
+}
+.text{
+	border-radius: 50% 50% 50% 50% / 5% 5% 5% 5% ;
+  	box-shadow: -5px -5px rgba(0,0,0,.25);
+	  background:#A48983;
+	  color:white;
+	  text-align: center;
+	  padding: 5px;
+	  width: 15%;
+}
+#logo_bottom{
+	font-size: 30px;
+	left: 110px;
+	width: 209px;
+
+}
+#back{
+	position:absolute;
+	top:450px;
+	background: #a11f1fc2;
+	text-align: center;
+	text-decoration: none;
+}
+#add_new{
+	left:310px;
+	margin-top: 90px;
+	margin-left: 350px;
+}
+
 .list{
 	border-bottom: 2px solid rgba(255,255,255,0.2);
 	 padding: 10px;
@@ -31,9 +79,8 @@ body {
 	float:left;
 	display: flex;
 	margin: 0px;
-	position: relative;
 	height: 900px;
-	width:309px;
+	width: 309px;
 	background: url(files/side_bar.png);	 
 }
 .menu {
