@@ -1,6 +1,4 @@
 <div id="add_new">
-
-
   <form>
     <p class="text">How much:</p> <input type="text" name="value"> 
     <p class="text"> Description: </p><input type="text" name="description">
