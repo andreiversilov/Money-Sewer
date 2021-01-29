@@ -19,5 +19,9 @@
 			<li class="side_list" style="padding-top: 70px; padding-left:18px;"><a class="side_list" href="#">Taxes</a></li>
 		</ul>
 	</aside>
+	<?php if($_SESSION['msg']) {?>
+	<p><?php echo $_SESSION['msg'];?></p>
+	<?php unset($_SESSION['msg']);?>
+			<?php } ?>
 </body>
 </html>

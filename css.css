@@ -4,7 +4,9 @@
 	background: url(files/header.png);
 	
 }
-
+.msg{
+	color:red;
+}
 .logo{ 
 	position: absolute;
 	font-size: 30px;

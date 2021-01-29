@@ -1,6 +1,9 @@
 <?php
 ini_set('display_errors',1);
 error_reporting(E_ALL);
+if(!isset($_SESSION)){
+    session_start();
+}
 require_once "../functions.php";
 
  $login = filter_var(trim($_POST['login']),
@@ -15,14 +18,18 @@ require_once "../functions.php";
   $email = filter_var(trim($_POST['email']),
  FILTER_SANITIZE_STRING);
 
-  // if ((mb_strlen($login) < 4) || (mb_strlen($login) > 100)) {
-  //   echo "Please, enter login 5-100 characters long";
-  //   exit();
-  // } 
-validate_data($login,5,100,"login");
-validate_data($password,5,100,"password");
-validate_data($name,5,100,"name");
-validate_data($email,5,100,"email");
+  $result = (!validate_data($login,5,100,"login") +
+             !validate_data($password,5,100,"password") +
+             !validate_data($email,5,100,"email") +
+             !validate_data($name,5,100,"name"));
+
+ if ($result)
+{
+  header("Location: /money_sewer/?action=registration");
+  exit();
+}
+
+
 
 $mysql = new mysqli('localhost','root','','sewer');
   if (!$mysql) {
@@ -32,12 +39,8 @@ $mysql = new mysqli('localhost','root','','sewer');
 mysqli_query($mysql,"INSERT INTO users (login,password,name,email) 
   VALUES('$login','$password','$name','$email')");
 mysqli_close($mysql);
-
-
-
-
- 
- 
-
+$_SESSION['msg'] = "Регистрация прошла успешно";
+header('Location: /money_sewer');
+exit();
 
 ?>

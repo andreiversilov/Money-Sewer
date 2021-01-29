@@ -1,3 +1,4 @@
+
 <form  action="actions/check.php" method="post" class="form">
     <p class="text" id="reg"> REGISTRATION </p>
 <input type="text" name="name" placeholder="Enter your Name" > </input><br>
