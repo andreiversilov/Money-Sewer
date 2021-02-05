@@ -7,8 +7,16 @@
 </head>
 <body>
 	<header id="head">
-	 	 <a id="oauth_head" class="login white_link" href="?action=auth">Sign in</p>
-		 <a id="login_head" class="login white_link"  href="?action=registration">Registration</p>
+	 	 
+	 	 	<?php	if (isset($_COOKIE['user'])): ?>
+				<p id='login_head' class='login white_link'>Hello <?php echo $_COOKIE['user']; ?></p>
+	 	 		<a id='oauth_head' class='login white_link' href='?action=logout'>LogOut</a>
+	 	 	
+	 	 	<?php else: ?>
+	 	 		<a id='oauth_head' class='login white_link' href='?action=auth'>Sign in</a>
+	 	 		<a id='login_head' class='login white_link' href='?action=registration'>Registration</a>
+	 	 	}
+	 	 	<?php endif;?>
 		<a href="?action=main" class="logo" id="logo_top"> Money</a>
 	</header>
 	<aside id="side_bar">
@@ -20,7 +28,7 @@
 		</ul>
 	</aside>
 	<?php if($_SESSION['msg']) {?>
-	<p><?php echo $_SESSION['msg'];?></p>
+	<p class="msg"><?php echo $_SESSION['msg'];?></p>
 	<?php unset($_SESSION['msg']);?>
 			<?php } ?>
 </body>
