@@ -27,22 +27,18 @@
       return true;
   }
 
-   function validate_email($data, $min, $max, $name) {
+   function validate_email($data) {
     if ($data == NULL) {
-      $_SESSION['msg'] .= "Please, enter $name $min-$max characters long <br>";
+      $_SESSION['msg'] .= "Please, enter e-mail <br>";
       return false;
     }
-    if (mb_strlen($data) < $min || mb_strlen($data) > $max) {
-      $_SESSION['msg'] .= "Please, enter $name $min-$max characters long <br>";
+    elseif (!filter_var($data, FILTER_VALIDATE_EMAIL)) {
+      $_SESSION['msg'] .= "Wrong e-mail, $data";
       return false;
     }
-    if (!filter_var($data, FILTER_VALIDATE_EMAIL)) {
-      $_SESSION['msg'] .= "Wrong e-mail";
-      return false;
-    }
-    
-    else 
+    else {
       return true;
+    }
   }
 
 ?>

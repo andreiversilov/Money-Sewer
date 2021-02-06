@@ -1,9 +1,8 @@
 <?php
- // ini_set('display_errors',1);
- // error_reporting(E_ALL);
 if(!isset($_SESSION)){
     session_start();
 }
+
  require_once "configs.php";
  require_once "functions.php";
 $action = ($_GET['action']);
