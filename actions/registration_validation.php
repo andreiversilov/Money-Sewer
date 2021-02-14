@@ -50,6 +50,9 @@ mysqli_query($mysql,"INSERT INTO users (login,password,name,email)
   VALUES('$login','$password','$name','$email')");
 mysqli_close($mysql);
 $_SESSION['msg'] = "Регистрация прошла успешно";
+
+create_transactions_table($login);
+
 header('Location: /money_sewer');
 exit();
 

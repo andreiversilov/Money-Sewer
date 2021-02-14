@@ -1,6 +1,5 @@
 <?php
- // ini_set('display_errors',1);
- // error_reporting(E_ALL);
+
   function render($path,$param = array())
   {
     extract($param);
@@ -41,4 +40,35 @@
     }
   }
 
+  function create_transactions_table($login){
+  $mysql = connection('transactions'); 
+
+    $query = "CREATE TABLE $login
+     (
+      id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      сurrency VARCHAR(30) NOT NULL,
+      value INT(20) NOT NULL,
+      type VARCHAR(30) NOT NULL,
+      category VARCHAR(50),
+      reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      )";
+
+    
+
+     $income = mysqli_query($mysql, $query);
+
+    if(!$income){
+        die("Query 'income' has error");
+    }
+   mysqli_close($mysql);
+}
+
+  function connection($name){
+    $mysql = new mysqli('localhost','root','','transactions');
+
+  if (!$mysql){
+    die("Connection failed: ".mysqli_connect_error());
+  } 
+  return $mysql;
+  }
 ?>
