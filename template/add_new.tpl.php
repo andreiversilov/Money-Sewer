@@ -4,14 +4,14 @@
       <option selected  onclick="show_categ()"value="income">➜ Income</option>
       <option id="expence" onclick="hide_categ()" value="expence">➜ Expence</option>
     </select>
-    <p class="text">How much:</p> <input type="text" name="value"> 
+    <p class="text">How much:</p> <input type="text" name="amount"> 
     <p class="text"> Description: </p><input type="text" name="description">
     <p class="text"> Currency: </p><input type="text" name="currency" value="MDL">
 
      <p> 
       <p class="text category">Category:</p>
       <select size="4" class="select-css category" name="category">
-    <option value="Grocery">Grocery</option>
+    <option value="Grocery" selected="selected">Grocery</option>
     <option value="Bills">Bills</option>
     <option value="Shopping">Shopping</option>
     <option value="Transport">Transport</option>

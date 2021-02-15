@@ -46,8 +46,9 @@
     $query = "CREATE TABLE $login
      (
       id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      description VARCHAR(255) NOT NULL DEFAULT 'Some stuff',
       сurrency VARCHAR(30) NOT NULL,
-      value INT(20) NOT NULL,
+      amount INT(20) NOT NULL,
       type VARCHAR(30) NOT NULL,
       category VARCHAR(50),
       reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -64,11 +65,13 @@
 }
 
   function connection($name){
-    $mysql = new mysqli('localhost','root','','transactions');
+    $mysql = new mysqli('localhost','root','',$name);
 
   if (!$mysql){
     die("Connection failed: ".mysqli_connect_error());
   } 
   return $mysql;
   }
+
+
 ?>
